@@ -8,4 +8,9 @@ myApp
   })
   .run(function() {
     //initialize
+    console.log('running');
   });
+
+myApp.controller('myController', ['$scope', function($scope) {
+  $scope.myFirstName = "Reyn";
+}]);
