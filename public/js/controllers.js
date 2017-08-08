@@ -1,5 +1,5 @@
 //both mean the same thing, just different ways
-angular.module('myApp', []);
+angular.module('myApp');
 
 var myApp = angular.module('myApp');
 

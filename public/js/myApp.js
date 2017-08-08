@@ -6,7 +6,9 @@ myApp
   .config(function() {
     //config
   })
-  .run(function() {
+  .run(['$rootScope', 'APP_VERSION',function($rootScope, APP_VERSION) {
     //initialize
-  });
+    console.log(APP_VERSION);
+    $rootScope.version = APP_VERSION;
+  }]);
 
