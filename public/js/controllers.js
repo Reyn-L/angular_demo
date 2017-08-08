@@ -24,7 +24,7 @@ myApp.controller('myController', ['$scope','CharacterVersionFactory', 'mainChara
   $scope.movies = [];
   $scope.search = '';
   Movies.getMovies()
-  .then((movies) => {
+   .then((movies) => {
     console.log(movies);
     $scope.movies = movies;
   });
