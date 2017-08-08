@@ -7,5 +7,5 @@ myApp.controller('myController', ['$scope','CharacterVersionFactory', 'mainChara
   $scope.myFirstName = "Reyn";
   $scope.myModel = "Ready Player One";
   $scope.character = mainCharacter;
-  $scope.factory = CharacterVersionFactory;
+  $scope.cvfResult = CharacterVersionFactory.genCharVersion();
 }]);
