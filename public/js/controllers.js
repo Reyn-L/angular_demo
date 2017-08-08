@@ -1,9 +1,10 @@
+/*jshint esversion: 6 */
 //both mean the same thing, just different ways
 angular.module('myApp');
 
 var myApp = angular.module('myApp');
 
-myApp.controller('myController', ['$scope','CharacterVersionFactory', 'mainCharacter', 'BookService', function($scope, CharacterVersionFactory, mainCharacter, BookService) {
+myApp.controller('myController', ['$scope','CharacterVersionFactory', 'mainCharacter', 'BookService', 'Movies', function($scope, CharacterVersionFactory, mainCharacter, BookService, Movies) {
   $scope.myFirstName = "Reyn";
   $scope.myModel = "Ready Player One";
   $scope.character = mainCharacter;
@@ -19,4 +20,12 @@ myApp.controller('myController', ['$scope','CharacterVersionFactory', 'mainChara
     $scope.newBook.title = '';
     $scope.newbook.author = '';
   };
+
+  $scope.movies = [];
+  $scope.search = '';
+  Movies.getMovies()
+  .then((movies) => {
+    console.log(movies);
+    $scope.movies = movies;
+  });
 }]);
