@@ -8,5 +8,15 @@ myApp.controller('myController', ['$scope','CharacterVersionFactory', 'mainChara
   $scope.myModel = "Ready Player One";
   $scope.character = mainCharacter;
   $scope.cvfResult = CharacterVersionFactory.genCharVersion();
-  $scope.books = BookService.getBooks();
+  $scope.newbook = {title: '', author: '' };
+  $scope.BookService  = BookService;
+  $scope.addBook = function() {
+    var newBook = {
+      title: $scope.newBook.title,
+      author: $scope.newBook.author
+    };
+    BookService.addBook(newBook);
+    $scope.newBook.title = '';
+    $scope.newbook.author = '';
+  };
 }]);

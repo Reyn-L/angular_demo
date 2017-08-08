@@ -1,6 +1,6 @@
 angular.module('myApp')
 .service('BookService', [function() {
-  this.books = [
+  var books = [
   {
     title: 'Rebecca',
     author: 'Dafney D.'
@@ -15,7 +15,10 @@ angular.module('myApp')
   }
   ];
 
-  this.getBooks = function() { return this.books; };
-
-  this.getBook = function(index) { return this.books[index]; };
+  return {
+    books: books,
+    getBooks: function() { return books; },
+    getBook: function(index) { return books[index]; },
+    addBook: function(book) { books.push(book); }
+  };
 }]);

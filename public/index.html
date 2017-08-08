@@ -10,7 +10,7 @@
   <div ng-controller="myController">
     {{myFirstName}}
     <br>
-    {{version}}
+    {{'VERSION: ' + version}}
     <br>
     <input type="text" ng-model="myModel">
     <input type="text" ng-model="myModel">
@@ -18,11 +18,14 @@
     <div> {{character}} </div>
     <div> {{cvfResult}} </div>
     <ul>
-      <li ng-repeat="book in books">
+    <li ng-repeat="book in BookService.books">
         <h4>{{ book.title }}</h4>
         <p>{{ book.author }}</p>
       </li>
     </ul>
+    <input type="text" placeholder="title" ng-model="newBook.title">
+    <input type="text" placeholder="author" ng-model="newBook.author">
+    <button ng-click="addBook()">Add</button>
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js'></script>
   <script src="/js/myApp.js"></script>
