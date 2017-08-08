@@ -17,7 +17,12 @@
     <div> {{myModel}}</div>
     <div> {{character}} </div>
     <div> {{cvfResult}} </div>
-    <div>{{books}} </div>
+    <ul>
+      <li ng-repeat="book in books">
+        <h4>{{ book.title }}</h4>
+        <p>{{ book.author }}</p>
+      </li>
+    </ul>
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js'></script>
   <script src="/js/myApp.js"></script>
